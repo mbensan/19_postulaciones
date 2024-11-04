@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+  get "postulation/create/:offer_id", to: "postulation#create", as: "create_postulation"
+  
+  get "postulation/destroy"
   resources :offers
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
