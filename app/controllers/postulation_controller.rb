@@ -17,4 +17,12 @@ class PostulationController < ApplicationController
 
   def destroy
   end
+
+  def check
+    postulation = Postulation.find_by(id: params[:postulation_id])
+    puts "\n\n#{postulation.to_json}\n\n"
+    postulation.checked = true
+    postulation.save
+    redirect_back fallback_location: root_path
+  end
 end
