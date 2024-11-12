@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :news
   get "messages/index"
   
   get "postulation/create/:offer_id", to: "postulation#create", as: "create_postulation"
